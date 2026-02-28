@@ -28,20 +28,32 @@ if (place_meeting(x, y + 1, oSolid)) { // if heidi is on the ground
 }
 
 if (place_meeting(x, y, oSpikes)) { // if heidi collides with the spikes
-
-    room_restart() // restart the level
+	with (oTimer)
+{
+    alarm[0] = 300;
+}
+    room_restart()
+// restart the level
 
 }
 
 if (place_meeting(x, y, oSaw)) { // if heidi collides with the spikes
-
-    room_restart() // restart the level
+	with (oTimer)
+{
+    alarm[0] = 300;
+}
+    room_restart()
+// restart the level
 
 }
 
 if (y > room_height or y < 0 or x > room_width or x < 0) { // if the player is outside of the room
-
-    room_restart(); 
+	with (oTimer)
+{
+    alarm[0] = 300;
+}
+    
+	room_restart(); 
 
 }
 
@@ -60,9 +72,6 @@ if keyboard_check(vk_right) {
 }
 
 
-    timer += 1;
-    if (timer >= room_speed * 5) {
-        room_restart();
-    }
+
 
 

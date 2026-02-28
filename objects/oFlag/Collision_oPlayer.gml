@@ -1,1 +1,2 @@
-room_goto(room_next);
+room_goto_next();
+alarm[0] = 300;
